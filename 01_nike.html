@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="01_nike.css" />
+    <title>Nike.Just.Do It</title>
+  </head>
+  <body>
+    <div class="background">
+      <div class="hearder">
+        <div class="top-header">
+          <div class="top-left-menu">
+            <img
+              class="jodan"
+              src="./images/01_jodan.png"
+              alt="조단 사이트 링크랑 이미지"
+            />
+            <img
+              class="convers"
+              src="./images/02_canbers.png"
+              alt="캔버스 사이트 링크랑 이미지"
+            />
+          </div>
+          <div class="top-right-menu">
+            <p class="shop-p">매장찾기</p>
+            <div class="shop-line">|</div>
+            <!--라인 이미지 바꾸기-->
+            <p class="help-p">고객센터</p>
+            <div class="help-line">|</div>
+            <p class="new-join-p">회원가입</p>
+            <div class="new-join-line">|</div>
+            <p class="log-in-p">로그인</p>
+          </div>
+        </div>
+
+        <div class="mid-header">
+          <div class="mid-left-menu">
+            <img class="nike" src="./images/03_nike.png" alt="나이키 로고" />
+          </div>
+          <div class="mid-center-menubox">
+            <div class="mid-center-menu">
+              <div class="mid-button">
+                new
+                <div class="new-underline"></div>
+              </div>
+              <div class="mid-button">
+                Men
+                <div class="men-underline"></div>
+              </div>
+              <div class="mid-button">
+                Women
+                <div class="women-underline"></div>
+              </div>
+              <div class="mid-button">
+                Kids
+                <div class="kids-underline"></div>
+              </div>
+              <div class="mid-button">
+                Sale
+                <div class="sale-underline"></div>
+              </div>
+            </div>
+          </div>
+          <div class="mid-right-menu">
+            <div class="input-box">
+              <input class="serch" type="text" placeholder="검색" />
+            </div>
+            <div class="mid-right-imgbox">
+              <img
+                class="heart"
+                src="./images/05_heart.png"
+                alt="즐겨찾기 로고"
+              />
+              <img class="cart" src="./images/04_cart.png" alt="장바구니로고" />
+            </div>
+          </div>
+        </div>
+        <div class="mid-headerunder">
+          <div class="new-under-menu">
+            <ul>
+              New
+              <li>신제품 전체</li>
+              <li>베스트셀러</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bot-header">
+          <div class="bot-center">
+            <span class="bot-span">대학생 할인 프로그램 안내 왜 대학생만</span>
+            <div class="bot-link">자세히보기(외부링크)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const mid_1 = document.querySelectorAll(".mid-button");
+    const mid_underpage = document.querySelector(".mid-headerunder");
+
+    /*포 잇치는 쿼리셀렉터올로 받아온 노드리스트를 반복문으로 각 요소마다 이벤트를 등록할 수 있는 반복문*/
+    mid_1.forEach((mid_1) => {
+      //mid-button을 받아온 mid_1에 mid_1(현재요소)를 가지고 mid_1에 마우스 오버, 마우스가 떨어진 상황을 받아옴
+      mid_1.addEventListener("mouseenter", () => {
+        mid_underpage.style.height = "200px";
+      });
+      mid_1.addEventListener("mouseleave", () => {
+        mid_underpage.style.height = "0px";
+      });
+    });
+  </script>
+</html>
