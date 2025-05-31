@@ -133,12 +133,14 @@ body {
 /*마우스 호버시 언더페이지 보이기*/
 /*얘가 필요없을지도? 얘가 먼저 커지고*/
 .mid-headerunder {
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  top: 100%;
   width: 100vw;
   height: 0;
   overflow: hidden;
   background: lightblue;
+  transition: height 0.3s;
+  z-index: 10;
 }
 
 /*언더페이지 안에 있는 리스트*/
@@ -146,68 +148,64 @@ body {
 .new-under-menu {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 0;
+  align-items: start;
+  height: 100vh;
+  max-height: 100%;
   overflow: hidden;
-  background: white;
+  transition: 0.1s;
+  transition-delay: 0.2s;
 }
 
 .under-menubox {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  gap: 100px;
+  width: auto;
+  gap: 80px;
 }
 
 .men-under-menu {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 0;
+  align-items: start;
+  height: 100%;
+  max-height: 100%;
   overflow: hidden;
-  background: white;
 }
 
 .women-under-menu {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 0;
+  align-items: start;
+  height: 100%;
+  max-height: 100%;
   overflow: hidden;
-  background: white;
 }
 
 .kids-under-menu {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 0;
+  align-items: start;
+  height: 100%;
+  max-height: 100%;
   overflow: hidden;
-  background: white;
 }
 
 .jordan-under-menu {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 0;
+  align-items: start;
+  height: 100%;
+  max-height: 100%;
   overflow: hidden;
-  background: white;
 }
 
 .sale-under-menu {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 0;
+  align-items: start;
+  height: 100%;
+  max-height: 100%;
   overflow: hidden;
-  background: white;
 }
 
 /*리스트 마지막 자식한테만 마진 바텀 추가로 주면?*/

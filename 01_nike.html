@@ -429,57 +429,63 @@
     const sale_1 = document.querySelector(".sale-under-menu");
 
     mid_1.addEventListener("mouseenter", () => {
-      new_1.style.transition = "0.5s";
-      new_1.style.height = new_1.scrollHeight + "px";
-      //mid_underpage.style.height = "200px";
+      const target = new_1.scrollHeight;
+      mid_underpage.style.height = target + "px";
+      new_1.style.height = target + "px";
     });
     mid_1.addEventListener("mouseleave", () => {
+      mid_underpage.style.height = "0px";
       new_1.style.height = "0px";
     });
 
     mid_2.addEventListener("mouseenter", () => {
-      men_1.style.height = "100%";
-      mid_underpage.style.height = "auto";
+      const target = men_1.scrollHeight;
+      mid_underpage.style.height = target + "px";
+      men_1.style.height = target + "px";
     });
     mid_2.addEventListener("mouseleave", () => {
-      men_1.style.height = "0px";
       mid_underpage.style.height = "0px";
+      men_1.style.height = "0px";
     });
 
     mid_3.addEventListener("mouseenter", () => {
-      women_1.style.height = "100%";
-      mid_underpage.style.height = "auto";
+      const target = women_1.scrollHeight;
+      mid_underpage.style.height = target + "px";
+      women_1.style.height = target + "px";
     });
     mid_3.addEventListener("mouseleave", () => {
-      women_1.style.height = "0px";
       mid_underpage.style.height = "0px";
+      women_1.style.height = "0px";
     });
 
     mid_4.addEventListener("mouseenter", () => {
-      kids_1.style.height = "100%";
-      mid_underpage.style.height = "auto";
+      const target = kids_1.scrollHeight;
+      mid_underpage.style.height = target + "px";
+      kids_1.style.height = target + "px";
     });
     mid_4.addEventListener("mouseleave", () => {
-      kids_1.style.height = "0px";
       mid_underpage.style.height = "0px";
+      kids_1.style.height = "0px";
     });
 
     mid_5.addEventListener("mouseenter", () => {
-      jordan_1.style.height = "100%";
-      mid_underpage.style.height = "auto";
+      const target = jordan_1.scrollHeight;
+      mid_underpage.style.height = target + "px";
+      jordan_1.style.height = target + "px";
     });
     mid_5.addEventListener("mouseleave", () => {
-      jordan_1.style.height = "0px";
       mid_underpage.style.height = "0px";
+      jordan_1.style.height = "0px";
     });
 
     mid_6.addEventListener("mouseenter", () => {
-      sale_1.style.height = "100%";
-      mid_underpage.style.height = "auto";
+      const target = sale_1.scrollHeight;
+      mid_underpage.style.height = target + "px";
+      sale_1.style.height = target + "px";
     });
     mid_6.addEventListener("mouseleave", () => {
-      sale_1.style.height = "0px";
       mid_underpage.style.height = "0px";
+      sale_1.style.height = "0px";
     });
   </script>
 </html>
