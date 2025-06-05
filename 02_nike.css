@@ -19,7 +19,7 @@ li {
 
 .header-wraper {
   position: fixed;
-  z-index: 20;
+  z-index: 3;
 }
 /*웹 페이지 헤더 고정시키기, 스크롤 다운 이벤트 발생시 사라지게 만들기*/
 
@@ -51,6 +51,36 @@ li {
   align-items: center;
   gap: 10px;
 }
+
+/*고객센터 마우스 오버시 드롭다운 리스트 보이기*/
+/*여기에 마우스 호버되면 고객센터 드롭다운 메뉴 나옴*/
+.header-help {
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/*리스트를 감싸고 있는 부모요소*/
+.header-help-dropdown-menu {
+  display: flex;
+  position: absolute;
+  width: 250px;
+  right: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: 3;
+  border-radius: 10px;
+  background: lightblue;
+}
+
+.header-help-dropdown-list {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 0;
+  opacity: 0;
+}
+
 /*맨 위 헤더부분 여기까지 -------------------------------------------------*/
 
 /*헤더 중간 헤더부분 여기부터 ------------------------------------------------*/
@@ -147,6 +177,8 @@ li {
 .header-user-input-box {
   display: flex;
   justify-content: right;
+  position: relative; /*검색창이 드롭다운 창에 가려지지 않게*/
+  z-index: 2; /*z인덱스로 높게 줘서 위로 올리기*/
   gap: 15px;
 }
 

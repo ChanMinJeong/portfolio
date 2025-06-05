@@ -44,14 +44,30 @@
           </svg>
         </div>
         <div class="header-right-menu">
-          <p class="shop">매장찾기</p>
+          <li class="header-shop"><span>매장찾기</span></li>
+          <div class="header-line">|</div>
+          <li class="header-help">
+            <span>고객센터</span>
+            <div class="header-help-dropdown-menu">
+              <ul class="header-help-dropdown-list">
+                <h4>고객센터</h4>
+                <li>주문</li>
+                <li>로그인 안내</li>
+                <li>결제 방법</li>
+                <li>배송</li>
+                <li>반품</li>
+                <li>사이즈 가이드</li>
+                <li>문의하기</li>
+                <li>개인정보처리방침</li>
+                <li>이용약관</li>
+                <li>이벤트</li>
+              </ul>
+            </div>
+          </li>
+          <div class="header-line">|</div>
+          <li class="header-new-join"><span>회원가입</span></li>
           <div class="line">|</div>
-          <!--라인 이미지 바꾸기-->
-          <p class="help">고객센터</p>
-          <div class="line">|</div>
-          <p class="new-join">회원가입</p>
-          <div class="line">|</div>
-          <p class="log-in">로그인</p>
+          <li class="header-log-in"><span>로그인</span></li>
         </div>
       </div>
       <nav class="header-main-menu">
@@ -430,6 +446,12 @@
   </body>
 
   <script>
+    const helpBtn = document.querySelector(".header-help");
+    const dropdownHelp = document.querySelector(".header-help-dropdown-menu");
+    const dropdownHelpList = document.querySelector(
+      ".header-help-dropdown-list"
+    );
+
     const newBtn = document.querySelector(".menu-item-new");
     const dropdownNew = document.querySelector(".header-dropdown-new");
 
@@ -451,27 +473,45 @@
     const dropdownList = document.querySelectorAll(".header-dropdown-list");
     const mainpageOpacity = document.querySelector(".main-page-background");
 
-    function mouseHover(Element) {
-      const targetHeight = Element.scrollHeight;
-      Element.style.height = targetHeight + "px";
+    //헤더 고객센터(헬프)메뉴에 마우스 호버시 발동하는 함수
+    function mouseHoverHelpMenu(element) {
+      const targetHeight = element.scrollHeight;
+      element.style.height = targetHeight + "px";
+      element.style.transition = "height 0.2s";
+      dropdownHelpList.style.transition = "opacity 0.3s";
+      dropdownHelpList.style.transitionDelay = "0.2s";
+      dropdownHelpList.style.opacity = "1";
+    }
+    //고객센터 마우스 호버 중 범위 밖으로 벗어났을 때 발동하는 함수
+    function mouseOutHelpMenu(element) {
+      element.style.transition = "none";
+      element.style.height = "0px";
+      dropdownHelpList.style.transition = "none";
+      dropdownHelpList.style.opacity = "0";
+    }
+
+    //헤더 메인 메뉴 6개중 마우스 호버시 발동하는 함수
+    function mouseHoverMainMenu(element) {
+      const targetHeight = element.scrollHeight;
+      element.style.height = targetHeight + "px";
       //높이0, 오토인 것을 픽셀로 계산 계산
-      Element.style.transition = "height 0.3s";
-      mainpageOpacity.style.transition = "opacity, 0.3s";
-      mainpageOpacity.style.transitionDelay = "0.2s";
+      element.style.transition = "height 0.2s";
+      mainpageOpacity.style.transition = "1s";
       mainpageOpacity.style.background = "black";
       mainpageOpacity.style.opacity = "0.3";
       dropdownList.forEach((item) => {
         //공통 요소인 메인 메뉴 카테고리 오파시티 조절
-        item.style.transition = "opacity, 0.3s";
+        item.style.transition = "opacity 0.3s";
         item.style.transitionDelay = "0.2s";
         item.style.opacity = "1";
       });
     }
 
-    function mouseOut(Element) {
-      Element.style.transition = "none";
-      Element.style.height = "0px";
-      mainpageOpacity.style.transition = "opacity, 0.3s";
+    //헤더 메인 메뉴 6개 마우스 호버중일때 마우스가 범위 밖으로 나가면 발동하는 함수
+    function mouseOutMainMenu(element) {
+      element.style.transition = "none";
+      element.style.height = "0px";
+      mainpageOpacity.style.transition = "opacity 0.5s";
       mainpageOpacity.style.background = "none";
       mainpageOpacity.style.opacity = "1";
       dropdownList.forEach((item) => {
@@ -479,47 +519,62 @@
         item.style.opacity = "0";
       });
     }
+    /*고객센터 버튼 마우스 이벤트*/
+    helpBtn.addEventListener("mouseenter", () => {
+      mouseHoverHelpMenu(dropdownHelp);
+    });
+    helpBtn.addEventListener("mouseleave", () => {
+      mouseOutHelpMenu(dropdownHelp);
+    });
 
+    /*메인 메뉴 버튼 마우스 이벤트*/
     newBtn.addEventListener("mouseenter", () => {
-      mouseHover(dropdownNew);
+      mouseHoverMainMenu(dropdownNew);
     });
     newBtn.addEventListener("mouseleave", () => {
-      mouseOut(dropdownNew);
+      mouseOutMainMenu(dropdownNew);
+    });
+
+    newBtn.addEventListener("mouseenter", () => {
+      mouseHoverMainMenu(dropdownNew);
+    });
+    newBtn.addEventListener("mouseleave", () => {
+      mouseOutMainMenu(dropdownNew);
     });
 
     menBtn.addEventListener("mouseenter", () => {
-      mouseHover(dropdownMen);
+      mouseHoverMainMenu(dropdownMen);
     });
     menBtn.addEventListener("mouseleave", () => {
-      mouseOut(dropdownMen);
+      mouseOutMainMenu(dropdownMen);
     });
 
     womenBtn.addEventListener("mouseenter", () => {
-      mouseHover(dropdownWomen);
+      mouseHoverMainMenu(dropdownWomen);
     });
     womenBtn.addEventListener("mouseleave", () => {
-      mouseOut(dropdownWomen);
+      mouseOutMainMenu(dropdownWomen);
     });
 
     kidsBtn.addEventListener("mouseenter", () => {
-      mouseHover(dropdownKids);
+      mouseHoverMainMenu(dropdownKids);
     });
     kidsBtn.addEventListener("mouseleave", () => {
-      mouseOut(dropdownKids);
+      mouseOutMainMenu(dropdownKids);
     });
 
     jordanBtn.addEventListener("mouseenter", () => {
-      mouseHover(dropdownJordan);
+      mouseHoverMainMenu(dropdownJordan);
     });
     jordanBtn.addEventListener("mouseleave", () => {
-      mouseOut(dropdownJordan);
+      mouseOutMainMenu(dropdownJordan);
     });
 
     saleBtn.addEventListener("mouseenter", () => {
-      mouseHover(dropdownSale);
+      mouseHoverMainMenu(dropdownSale);
     });
     saleBtn.addEventListener("mouseleave", () => {
-      mouseOut(dropdownSale);
+      mouseOutMainMenu(dropdownSale);
     });
   </script>
 </html>
