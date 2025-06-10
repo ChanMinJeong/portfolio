@@ -435,6 +435,28 @@
             </svg>
           </div>
         </div>
+        <!--서치를 클릭하면 새로운 div가 나와서 검색창을 팝업으로 띄움-->
+        <div class="serch-click-box">
+          <div class="serch-click-box-nike-logo">
+            <svg
+              aria-hidden="true"
+              class="swoosh-svg"
+              focusable="false"
+              viewBox="0 0 24 24"
+              role="img"
+              width="100px"
+              height="100px"
+              fill="none"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108-.144.234-1.415 2.349-.025 3.345.275.2.666.298 1.147.298.386 0 .829-.063 1.316-.19L21 8.719z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
+        </div>
       </nav>
     </nav>
     <nav class="main-page-background">
@@ -442,16 +464,99 @@
         <span>대학생 할인 프로그램 안내</span>
         <span>자세히 보기</span>
       </div>
+
+      <div class="main-page-first-video">
+        <video class="first-video" autoplay loop muted>
+          <!--뮤트는 음소거-->
+          <source src="./video/Nike-Just-Do-It-01.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="main-page-national-team-uniform">
+        <span class="main-page-national-team-uniform-span"
+          >쉬운 길은 없다. 모든 건 노력으로 완성된다.</span
+        >
+        <h1>두려움이란 없다.</h1>
+        <span class="main-page-national-team-uniform-span"
+          >새롭게 출시된 2025 대한민국 국가대표팀 유니폼을 만나 보세요.</span
+        >
+        <div class="main-page-national-team-uniform-shop">
+          <div class="main-page-national-team-uniform-shop-btn">구매하기</div>
+        </div>
+      </div>
+
+      <div class="main-page-summer-ready-shoes-img-box">
+        <img class="summer-ready-img" src="./images/summer-ready.jpg" />
+      </div>
+      <div class="main-page-summer-ready-shose">
+        <span class="main-page-summer-ready-shose-span">Summer Ready</span>
+        <h1>여름 준비 완료</h1>
+        <span class="main-page-summer-ready-shose-span">
+          새로운 스타일과 함게 여름을 준비해보세요</span
+        >
+        <div class="main-page-summer-ready-shose-shop">
+          <div class="main-page-summer-ready-shose-shop-btn">구매하기</div>
+        </div>
+      </div>
+
+      <div class="main-page-always-iconic-shose-box">
+        <div class="main-page-always-iconic-shose">
+          <span>Always Iconic</span>
+        </div>
+        <div class="main-page-iconic-shose-img-slider">
+          <img
+            class="iconic-shose-img"
+            src="./images/nike-just-do-it-shose-1.jpg"
+          />
+          <img
+            class="iconic-shose-img"
+            src="./images/nike-just-do-it-shose-2.jpg"
+          />
+          <img
+            class="iconic-shose-img"
+            src="./images/nike-just-do-it-shose-3.jpg"
+          />
+          <img
+            class="iconic-shose-img"
+            src="./images/nike-just-do-it-shose-4.jpg"
+          />
+          <img
+            class="iconic-shose-img"
+            src="./images/nike-just-do-it-shose-5.jpg"
+          />
+          <img
+            class="iconic-shose-img"
+            src="./images/nike-just-do-it-shose-6.jpg"
+          />
+          <img
+            class="iconic-shose-img"
+            src="./images/nike-just-do-it-shose-7.jpg"
+          />
+          <img
+            class="iconic-shose-img"
+            src="./images/nike-just-do-it-shose-8.jpg"
+          />
+          <img
+            class="iconic-shose-img"
+            src="./images/nike-just-do-it-shose-9.jpg"
+          />
+          <img
+            class="iconic-shose-img"
+            src="./images/nike-just-do-it-shose-10.jpg"
+          />
+        </div>
+      </div>
     </nav>
   </body>
 
   <script>
+    /*고객센터 마우스 호버 관련 변수*/
     const helpBtn = document.querySelector(".header-help");
     const dropdownHelp = document.querySelector(".header-help-dropdown-menu");
     const dropdownHelpList = document.querySelector(
       ".header-help-dropdown-list"
     );
 
+    /*메인메뉴 마우스 호버 관련 변수*/
     const newBtn = document.querySelector(".menu-item-new");
     const dropdownNew = document.querySelector(".header-dropdown-new");
 
@@ -496,9 +601,9 @@
       element.style.height = targetHeight + "px";
       //높이0, 오토인 것을 픽셀로 계산 계산
       element.style.transition = "height 0.2s";
-      mainpageOpacity.style.transition = "1s";
+      mainpageOpacity.style.transition = "0.7s";
       mainpageOpacity.style.background = "black";
-      mainpageOpacity.style.opacity = "0.3";
+      mainpageOpacity.style.opacity = "0.5";
       dropdownList.forEach((item) => {
         //공통 요소인 메인 메뉴 카테고리 오파시티 조절
         item.style.transition = "opacity 0.3s";
