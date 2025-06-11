@@ -459,12 +459,13 @@
         </div>
       </nav>
     </nav>
+
     <nav class="main-page-background">
+      <div class="main-page-opacity-control"></div>
       <div class="top-promotion">
         <span>대학생 할인 프로그램 안내</span>
         <span>자세히 보기</span>
       </div>
-
       <div class="main-page-first-video">
         <video class="first-video" autoplay loop muted>
           <!--뮤트는 음소거-->
@@ -498,52 +499,78 @@
         </div>
       </div>
 
+      <!--아이코닉 신발 슬라이더 부분-->
       <div class="main-page-always-iconic-shose-box">
         <div class="main-page-always-iconic-shose">
           <span>Always Iconic</span>
         </div>
-        <div class="main-page-iconic-shose-img-slider">
-          <img
-            class="iconic-shose-img"
-            src="./images/nike-just-do-it-shose-1.jpg"
-          />
-          <img
-            class="iconic-shose-img"
-            src="./images/nike-just-do-it-shose-2.jpg"
-          />
-          <img
-            class="iconic-shose-img"
-            src="./images/nike-just-do-it-shose-3.jpg"
-          />
-          <img
-            class="iconic-shose-img"
-            src="./images/nike-just-do-it-shose-4.jpg"
-          />
-          <img
-            class="iconic-shose-img"
-            src="./images/nike-just-do-it-shose-5.jpg"
-          />
-          <img
-            class="iconic-shose-img"
-            src="./images/nike-just-do-it-shose-6.jpg"
-          />
-          <img
-            class="iconic-shose-img"
-            src="./images/nike-just-do-it-shose-7.jpg"
-          />
-          <img
-            class="iconic-shose-img"
-            src="./images/nike-just-do-it-shose-8.jpg"
-          />
-          <img
-            class="iconic-shose-img"
-            src="./images/nike-just-do-it-shose-9.jpg"
-          />
-          <img
-            class="iconic-shose-img"
-            src="./images/nike-just-do-it-shose-10.jpg"
-          />
+        <div class="main-page-iconic-shose-img-slider-box">
+          <ul class="iconic-shose-slider-track">
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-1.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-2.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-3.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-4.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-5.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-6.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-7.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-8.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-9.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-10.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-1.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-2.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-3.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-4.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-5.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-6.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-7.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-8.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-9.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-10.jpg" />
+            </li>
+          </ul>
         </div>
+
+        <div class="main-page-iconic-shose-img-slider-left-btn"></div>
+        <div class="main-page-iconic-shose-img-slider-right-btn"></div>
       </div>
     </nav>
   </body>
@@ -576,7 +603,26 @@
     const dropdownSale = document.querySelector(".header-dropdown-sale");
 
     const dropdownList = document.querySelectorAll(".header-dropdown-list");
-    const mainpageOpacity = document.querySelector(".main-page-background");
+
+    //메인 메뉴 버튼에 마우스 호버시 백 그라운드 오파시티 조절 변수
+    const mainpageOpacityControl = document.querySelector(
+      ".main-page-opacity-control"
+    );
+    const mainPageBackGround = document.querySelector(".main-page-background");
+
+    /*올웨이즈 아이코닉 신발 이미지 슬라이더 버튼 관련 변수*/
+    const isImgSliderBox = document.querySelector(".iconic-shose-slider-track");
+    const isImgSliderLeftBtn = document.querySelector(
+      ".main-page-iconic-shose-img-slider-left-btn"
+    );
+    const isImgSliderRightBtn = document.querySelector(
+      ".main-page-iconic-shose-img-slider-right-btn"
+    );
+
+    const isImgWidth = 225;
+    const isImg = 7;
+    const isImgTotal = document.querySelectorAll(".iconic-shose-img").length;
+    let isImgIndex = 0;
 
     //헤더 고객센터(헬프)메뉴에 마우스 호버시 발동하는 함수
     function mouseHoverHelpMenu(element) {
@@ -598,12 +644,17 @@
     //헤더 메인 메뉴 6개중 마우스 호버시 발동하는 함수
     function mouseHoverMainMenu(element) {
       const targetHeight = element.scrollHeight;
+      const backgroundHeight = mainPageBackGround.scrollHeight;
+      //백그라운드높이 함수에 메인페이지 백그라운드의 크기를 스크롤 높이로 계산
       element.style.height = targetHeight + "px";
-      //높이0, 오토인 것을 픽셀로 계산 계산
       element.style.transition = "height 0.2s";
-      mainpageOpacity.style.transition = "0.7s";
-      mainpageOpacity.style.background = "black";
-      mainpageOpacity.style.opacity = "0.5";
+      //높이0, 오토인 것을 픽셀로 계산 계산
+
+      mainpageOpacityControl.style.height = backgroundHeight + "px";
+      //메인페이지오파시티티컨트롤 요소의 높이를 메인페이지 스크롤 높이만큼 px로 변환
+      mainpageOpacityControl.style.opacity = "0.3";
+      mainpageOpacityControl.style.transition = "opacity 0.5s";
+
       dropdownList.forEach((item) => {
         //공통 요소인 메인 메뉴 카테고리 오파시티 조절
         item.style.transition = "opacity 0.3s";
@@ -616,14 +667,22 @@
     function mouseOutMainMenu(element) {
       element.style.transition = "none";
       element.style.height = "0px";
-      mainpageOpacity.style.transition = "opacity 0.5s";
-      mainpageOpacity.style.background = "none";
-      mainpageOpacity.style.opacity = "1";
+      mainpageOpacityControl.style.height = "0";
+      mainpageOpacityControl.style.opacity = "0";
       dropdownList.forEach((item) => {
         item.style.transition = "none";
         item.style.opacity = "0";
       });
     }
+
+    //아이코닉슈즈 이미지 슬라이더에 사용되는 함수
+    function isImgSlider() {
+      const maxIndex = isImgTotal - isImg;
+      isImgIndex = Math.max(0, Math.min(isImgIndex, maxIndex));
+      const offset = isImgIndex * isImgWidth;
+      isImgSliderBox.style.transform = `translateX(-${offset}px)`;
+    }
+
     /*고객센터 버튼 마우스 이벤트*/
     helpBtn.addEventListener("mouseenter", () => {
       mouseHoverHelpMenu(dropdownHelp);
@@ -681,5 +740,16 @@
     saleBtn.addEventListener("mouseleave", () => {
       mouseOutMainMenu(dropdownSale);
     });
+
+    /*아이코닉 신발 이미지 슬라이더 버튼 클릭 이벤트*/
+    isImgSliderLeftBtn.addEventListener("click", () => {
+      isImgIndex--;
+      isImgSlider();
+    });
+    isImgSliderRightBtn.addEventListener("click", () => {
+      isImgIndex++;
+      isImgSlider();
+    });
+    isImgSlider();
   </script>
 </html>
