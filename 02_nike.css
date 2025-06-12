@@ -367,14 +367,13 @@ li {
 .main-page-always-iconic-shose {
   display: flex;
   width: 90%;
-  padding-bottom: 30px;
 }
 
 /*이미지 슬라이더 시킬 div요소*/
 .main-page-iconic-shose-img-slider-box {
   position: relative;
   width: 1125px;
-  gap: 15px;
+  height: 328px;
 }
 
 /*이미지가 이동할 때 애니메이션을 줄 ul묶음*/

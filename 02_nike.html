@@ -536,6 +536,37 @@
             <li class="iconic-shose-img">
               <img src="./images/nike-just-do-it-shose-10.jpg" />
             </li>
+            <!--똑같은 이미지 복사-->
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-1.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-2.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-3.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-4.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-5.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-6.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-7.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-8.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-9.jpg" />
+            </li>
+            <li class="iconic-shose-img">
+              <img src="./images/nike-just-do-it-shose-10.jpg" />
+            </li>
             <li class="iconic-shose-img">
               <img src="./images/nike-just-do-it-shose-1.jpg" />
             </li>
@@ -611,18 +642,20 @@
     const mainPageBackGround = document.querySelector(".main-page-background");
 
     /*올웨이즈 아이코닉 신발 이미지 슬라이더 버튼 관련 변수*/
-    const isImgSliderBox = document.querySelector(".iconic-shose-slider-track");
-    const isImgSliderLeftBtn = document.querySelector(
+    const slider = document.querySelector(".iconic-shose-slider-track");
+    const leftBtn = document.querySelector(
       ".main-page-iconic-shose-img-slider-left-btn"
     );
-    const isImgSliderRightBtn = document.querySelector(
+    const rightBtn = document.querySelector(
       ".main-page-iconic-shose-img-slider-right-btn"
     );
 
-    const isImgWidth = 225;
-    const isImg = 7;
-    const isImgTotal = document.querySelectorAll(".iconic-shose-img").length;
-    let isImgIndex = 0;
+    const imageWidth = 225;
+    const imageCount = 10;
+    let currentIndex = imageCount; // 복제본 이후부터 시작
+    let isSliding = false;
+
+    slider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
 
     //헤더 고객센터(헬프)메뉴에 마우스 호버시 발동하는 함수
     function mouseHoverHelpMenu(element) {
@@ -676,12 +709,39 @@
     }
 
     //아이코닉슈즈 이미지 슬라이더에 사용되는 함수
+    /*
     function isImgSlider() {
       const maxIndex = isImgTotal - isImg;
       isImgIndex = Math.max(0, Math.min(isImgIndex, maxIndex));
       const offset = isImgIndex * isImgWidth;
       isImgSliderBox.style.transform = `translateX(-${offset}px)`;
+    }*/
+
+    //아이코닉슈즈 이미지 슬라이더 무한루프 함수
+    //초기 위치값 설정 함수
+    function slideTo(index) {
+      if (isSliding) return; // transition 중이면 클릭 무시
+
+      isSliding = true;
+      slider.style.transition = "transform 0.5s ease";
+      slider.style.transform = `translateX(-${index * imageWidth}px)`;
+      currentIndex = index;
     }
+
+    //무한루프를 돌리는 함수
+    slider.addEventListener("transitionend", () => {
+      if (currentIndex >= imageCount * 2) {
+        slider.style.transition = "none";
+        currentIndex = imageCount;
+        slider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+      } else if (currentIndex <= 0) {
+        slider.style.transition = "none";
+        currentIndex = imageCount;
+        slider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+      }
+
+      isSliding = false; // transition 끝났으므로 다시 클릭 허용
+    });
 
     /*고객센터 버튼 마우스 이벤트*/
     helpBtn.addEventListener("mouseenter", () => {
@@ -742,14 +802,13 @@
     });
 
     /*아이코닉 신발 이미지 슬라이더 버튼 클릭 이벤트*/
-    isImgSliderLeftBtn.addEventListener("click", () => {
-      isImgIndex--;
-      isImgSlider();
+
+    rightBtn.addEventListener("click", () => {
+      slideTo(currentIndex + 1);
     });
-    isImgSliderRightBtn.addEventListener("click", () => {
-      isImgIndex++;
-      isImgSlider();
+
+    leftBtn.addEventListener("click", () => {
+      slideTo(currentIndex - 1);
     });
-    isImgSlider();
   </script>
 </html>
