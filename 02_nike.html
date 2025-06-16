@@ -467,7 +467,7 @@
         <span>자세히 보기</span>
       </div>
       <div class="main-page-first-video">
-        <video class="first-video" autoplay loop muted>
+        <video class="first-video" autoplay loop muted controls>
           <!--뮤트는 음소거-->
           <source src="./video/Nike-Just-Do-It-01.mp4" type="video/mp4" />
         </video>
@@ -603,6 +603,69 @@
         <div class="main-page-iconic-shose-img-slider-left-btn"></div>
         <div class="main-page-iconic-shose-img-slider-right-btn"></div>
       </div>
+
+      <!--월드컵 축구화 프로모션 부분-->
+      <div class="main-page-second-video">
+        <video class="second-video" autoplay loop muted controls>
+          <!--뮤트는 음소거-->
+          <source src="./video/Nike-Just-Do-It-03.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="main-page-more-goal">
+        <span class="main-page-more-goal-span"></span>
+        <h1>멈추지 마. 더 많은 골을 원해.</h1>
+        <div class="main-page-more-goal-shop">
+          <div class="main-page-more-goal-shop-btn">구매하기</div>
+        </div>
+      </div>
+      <!--나이키 맴버쉽 이미지 슬라이더 부분-->
+      <div class="main-page-nike-mambership-box">
+        <div class="main-page-nike-mambership-span">
+          <span>나이키 맴버쉽</span>
+          <div class="mambership">
+            <span>맴버 가입하기</span>
+            <button class="main-page-nike-mambership-btn">왼쪽</button>
+            <button class="main-page-nike-mambership-btn">오른쪽</button>
+          </div>
+        </div>
+
+        <div class="main-page-nike-mambership-img-box">
+          <ul class="main-page-nike-mambership-slider-track">
+            <li class="mambership-img">
+              <img src="./images/nike-mambership-1.jpg" />
+              <div class="mambership-img-spanbtn">
+                <span>맴버 리워드</span>
+                <span>운동과 쇼핑을 위한 특별한 혜택</span>
+                <span>구매하기</span>
+              </div>
+            </li>
+            <li class="mambership-img">
+              <img src="./images/nike-mambership-2.jpg" />
+              <div class="mambership-img-spanbtn">
+                <span>맴버 리워드</span>
+                <span>운동과 쇼핑을 위한 특별한 혜택</span>
+                <span>구매하기</span>
+              </div>
+            </li>
+            <li class="mambership-img">
+              <img src="./images/nike-mambership-3.jpg" />
+              <div class="mambership-img-spanbtn">
+                <span>맴버 리워드</span>
+                <span>운동과 쇼핑을 위한 특별한 혜택</span>
+                <span>구매하기</span>
+              </div>
+            </li>
+            <li class="mambership-img">
+              <img src="./images/nike-mambership-4.jpg" />
+              <div class="mambership-img-spanbtn">
+                <span>맴버 리워드</span>
+                <span>운동과 쇼핑을 위한 특별한 혜택</span>
+                <span>구매하기</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </body>
 
@@ -654,7 +717,6 @@
     const imageCount = 10;
     let currentIndex = imageCount; // 복제본 이후부터 시작
     let isSliding = false;
-
     slider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
 
     //헤더 고객센터(헬프)메뉴에 마우스 호버시 발동하는 함수
@@ -740,7 +802,7 @@
         slider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
       }
 
-      isSliding = false; // transition 끝났으므로 다시 클릭 허용
+      isSliding = false; // 다시 클릭 허용
     });
 
     /*고객센터 버튼 마우스 이벤트*/
@@ -802,11 +864,9 @@
     });
 
     /*아이코닉 신발 이미지 슬라이더 버튼 클릭 이벤트*/
-
     rightBtn.addEventListener("click", () => {
-      slideTo(currentIndex + 1);
+      slideTo(currentIndex + 1); //오른쪽 버튼이 눌리면 위치 인덱스 + 1, 왼쪽의 경우 -1
     });
-
     leftBtn.addEventListener("click", () => {
       slideTo(currentIndex - 1);
     });

@@ -1,3 +1,6 @@
+@import url(02_nike_header.css);
+@import url(02_nike_header_main.css);
+
 :root {
   --header-padding: 50px;
   --font-size-small: 14px;
@@ -14,7 +17,6 @@ body {
 
 li {
   list-style: none;
-  padding: 3px;
 }
 
 .header-wraper {
@@ -22,226 +24,6 @@ li {
   z-index: 50;
 }
 /*웹 페이지 헤더 고정시키기, 스크롤 다운 이벤트 발생시 사라지게 만들기*/
-
-/*맨 위 헤더부분  -------------------------------------------------*/
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100dvw;
-  height: 40px;
-  padding-left: var(--header-padding);
-  padding-right: var(--header-padding);
-  background: lightgray;
-}
-
-.header-left-logo {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.header-right-menu {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-/*고객센터 마우스 오버시 드롭다운 리스트 보이기*/
-/*여기에 마우스 호버되면 고객센터 드롭다운 메뉴 나옴*/
-.header-help {
-  position: relative;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-/*리스트를 감싸고 있는 부모요소*/
-.header-help-dropdown-menu {
-  display: flex;
-  position: absolute;
-  width: 250px;
-  right: 0;
-  height: 0;
-  overflow: hidden;
-  z-index: 3;
-  border-radius: 10px;
-  background: lightblue;
-}
-
-.header-help-dropdown-list {
-  display: flex;
-  flex-direction: column;
-  width: 250px;
-  height: 0;
-  opacity: 0;
-}
-
-/*맨 위 헤더부분 여기까지 -------------------------------------------------*/
-
-/*헤더 중간 헤더부분 여기부터 ------------------------------------------------*/
-.header-main-menu {
-  /*헤더 메인메뉴 감싸는 부모*/
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  width: 100dvw;
-  height: 70px;
-  padding-left: var(--header-padding);
-  padding-right: var(--header-padding);
-  background: white;
-}
-
-.nike-logo {
-  /*헤더 메인메뉴 왼쪽 나이키 로고*/
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  width: 100px;
-  height: 50px;
-}
-
-.header-main-menu-box {
-  /*헤더 메인메뉴 (뉴, 맨, 우먼 등)*/
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-/*여기에 마우스 호버가 되면 카테고리가 나옴*/
-.menu-item-new,
-.menu-item-men,
-.menu-item-women,
-.menu-item-kids,
-.menu-item-jordan,
-.menu-item-sale {
-  padding: 20px;
-}
-
-/*메뉴 아이템에 마우스 호버되면 밑줄 생기게 하기*/
-.header-main-menu-under-line {
-  display: flex;
-  width: 100%;
-  height: 3px;
-}
-
-.menu-item-new:hover,
-.menu-item-men:hover,
-.menu-item-women:hover,
-.menu-item-kids:hover,
-.menu-item-jordan:hover,
-.menu-item-sale:hover {
-  .header-main-menu-under-line {
-    transition: 0.2s;
-    background: black;
-  }
-}
-
-/*얘가 애니메이션 높이*/
-.header-dropdown-new,
-.header-dropdown-men,
-.header-dropdown-women,
-.header-dropdown-kids,
-.header-dropdown-jordan,
-.header-dropdown-sale {
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  position: fixed; /*내부구조에서 넓이를 웹 브라우저 전체로 잡기 위해 포지션을 고정*/
-  left: 0; /*왼쪽에 딱 붙어서 시작하게끔*/
-  width: 100dvw;
-  height: 0;
-  overflow: hidden; /*겹치는 부분은 사라지게 해서 마우스가 올라가도 작동안하게, 이게 없으면 허공(보이지 않지만 리스트가 있는곳)에 마우스가 닿으면 애니메이션 작동*/
-  background: lightgreen;
-}
-
-/*드롭다운된 리스트를 묶고있는 ul 컨트롤, 오파시티 딜레이로 설정 */
-.header-dropdown-list {
-  display: flex;
-  flex-direction: column;
-  width: 220px;
-  height: 0;
-  padding: 0;
-  margin: 0;
-  opacity: 0;
-}
-
-/*여기까지 검색창, 즐겨찾기, 장바구니 -------------------------------*/
-.header-user-input-box {
-  display: flex;
-  justify-content: right;
-  position: relative; /*검색창이 드롭다운 창에 가려지지 않게*/
-  z-index: 2; /*z인덱스로 높게 줘서 위로 올리기*/
-  gap: 15px;
-}
-
-.header-serch-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  border: none;
-  border-radius: 50px;
-  width: 150px;
-  background: lightgrey;
-}
-
-.header-serch-box-lens {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.serch {
-  border: none;
-  height: 35px;
-  width: 100px;
-  background: lightgrey;
-}
-.serch:focus {
-  outline: none; /*인풋 태그는 기본적으로 탑재된 아웃라인 인터페이스가 있어서 포커스 됐을 때 라인을 지우려면 border가 아니라 outline을 설정해야함*/
-}
-.header-bookmark {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.header-cart {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.serch-click-box {
-  display: none; /*테스트하기, 기본 플렉스*/
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  z-index: 3;
-  right: 0;
-  width: 100dvw;
-  height: 400px;
-  background: lightpink;
-}
-
-.serch-click-box-nike-logo {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  position: relative;
-  width: 100%;
-  height: auto;
-}
-
-/*여기까지 검색창, 즐겨찾기, 장바구니 -------------------------------*/
-
-/*헤더 중간 헤더부분 여기까지 ---------------------------------------*/
 
 /*헤더 아래쪽 화면은 여기서부터 ---------------------------------*/
 
@@ -380,6 +162,7 @@ li {
 .iconic-shose-slider-track {
   display: flex;
   transition: 0.5s;
+  gap: 10px;
 }
 
 /*플렉스 0 0 225px ->*/
@@ -419,4 +202,92 @@ li {
   margin-top: 55px;
   background: red;
   opacity: 0.3;
+}
+
+/*더 많은 골을 원해*/
+/*두번째 비디오*/
+.main-page-second-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  padding-top: var(--header-padding);
+  padding-bottom: var(--header-padding);
+}
+
+.second-video {
+  width: 90%;
+  height: auto;
+}
+
+.main-page-more-goal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.main-page-more-goal-shop {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.main-page-more-goal-shop-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 40px;
+  border-radius: 50px;
+  color: white;
+  background: black;
+}
+
+/*나이키 맴버쉽 이미지 슬라이더 부분*/
+.main-page-nike-mambership-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  padding-top: var(--header-padding);
+  padding-bottom: var(--header-padding);
+}
+
+.main-page-nike-mambership-span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: auto;
+}
+
+.main-page-nike-mambership-img-box {
+  width: 100%;
+  height: auto;
+  overflow-x: scroll;
+}
+
+.main-page-nike-mambership-slider-track {
+  display: flex;
+  flex-direction: row;
+  width: fit-content; /*자식 넓이만큼 확장*/
+  height: auto;
+  gap: 20px;
+}
+
+.mambership-img {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 350px;
+}
+
+.mambership-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
