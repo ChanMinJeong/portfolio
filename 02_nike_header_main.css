@@ -6,7 +6,7 @@
   align-items: center;
   width: 100dvw;
   height: 70px;
-  padding-left: var(--header-padding);
+  padding-left: 40px; /*나이키 로고 시작부분 강제맞춤*/
   padding-right: var(--header-padding);
   background: white;
 }
@@ -17,7 +17,11 @@
   justify-content: left;
   align-items: center;
   width: 100px;
-  height: 50px;
+  height: 30px;
+}
+
+.nike-logo:hover {
+  cursor: pointer;
 }
 
 .header-main-menu-box {
@@ -37,14 +41,19 @@
 .menu-item-kids,
 .menu-item-jordan,
 .menu-item-sale {
-  padding: 20px;
+  padding: 15px;
+}
+/*메뉴 버튼 폰트*/
+.menu-item-span {
+  font-size: 16px;
+  font-weight: 600;
 }
 
 /*메뉴 아이템에 마우스 호버되면 밑줄 생기게 하기*/
 .header-main-menu-under-line {
   display: flex;
   width: 100%;
-  height: 3px;
+  height: 2px;
 }
 
 .menu-item-new:hover,
@@ -74,18 +83,48 @@
   width: 100dvw;
   height: 0;
   overflow: hidden; /*겹치는 부분은 사라지게 해서 마우스가 올라가도 작동안하게, 이게 없으면 허공(보이지 않지만 리스트가 있는곳)에 마우스가 닿으면 애니메이션 작동*/
-  background: lightgreen;
+  background: white;
 }
 
 /*드롭다운된 리스트를 묶고있는 ul 컨트롤, 오파시티 딜레이로 설정 */
 .header-dropdown-list {
   display: flex;
   flex-direction: column;
-  width: 220px;
+  width: 240px;
   height: 0;
   padding: 0;
   margin: 0;
   opacity: 0;
+}
+
+/*드롭다운 리스트 폰트*/
+.header-dropdown-list-h {
+  font-size: 15px;
+  color: black;
+}
+.header-dropdown-list-sub-h {
+  font-size: 15px;
+  padding-top: 30px;
+  color: black;
+}
+.header-dropdown-list > li {
+  font-size: 14px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: gray;
+}
+
+.header-dropdown-list-h:hover,
+.header-dropdown-list-sub-h:hover,
+.header-dropdown-list > li:hover {
+  cursor: pointer;
+}
+.header-dropdown-list-h:hover,
+.header-dropdown-list-sub-h:hover {
+  opacity: 0.7;
+}
+.header-dropdown-list > li:hover {
+  color: black;
 }
 
 /*여기까지 검색창, 즐겨찾기, 장바구니 -------------------------------*/
@@ -99,39 +138,68 @@
 
 .header-serch-box {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   height: 100%;
   border: none;
   border-radius: 50px;
   width: 150px;
-  background: lightgrey;
+  background: #f5f5f5;
+}
+
+.header-serch-box:hover {
+  .serch {
+    background: #e5e5e5;
+  }
+  background: #e5e5e5;
 }
 
 .header-serch-box-lens {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .serch {
   border: none;
-  height: 35px;
+  height: 38px;
   width: 100px;
-  background: lightgrey;
+  background: #f5f5f5;
 }
 .serch:focus {
   outline: none; /*인풋 태그는 기본적으로 탑재된 아웃라인 인터페이스가 있어서 포커스 됐을 때 라인을 지우려면 border가 아니라 outline을 설정해야함*/
 }
+.serch::placeholder {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.header-serch-box-lens:hover {
+  cursor: pointer;
+  background: #cacacb;
+}
+
 .header-bookmark {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.header-bookmark:hover {
+  cursor: pointer;
+}
+
 .header-cart {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.header-cart:hover {
+  cursor: pointer;
 }
 
 .serch-click-box {

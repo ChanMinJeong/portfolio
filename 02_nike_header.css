@@ -8,7 +8,7 @@
   height: 40px;
   padding-left: var(--header-padding);
   padding-right: var(--header-padding);
-  background: lightgray;
+  background: #f5f5f5;
 }
 
 .header-left-logo {
@@ -45,15 +45,49 @@
   overflow: hidden;
   z-index: 3;
   border-radius: 10px;
-  background: lightblue;
+  background: white;
 }
 
 .header-help-dropdown-list {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  width: 230px;
   height: 0;
   opacity: 0;
+}
+
+.header-help-dropdown-list-h {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header-help-dropdown-list-li {
+  font-size: 12px;
+  padding: 5px;
+  color: gray;
+}
+
+.header-help-dropdown-list-h:hover,
+.header-help-dropdown-list-li:hover {
+  cursor: pointer;
+}
+.header-help-dropdown-list-li:hover {
+  color: black;
+}
+
+.header-right-menu-span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.header-right-menu-span:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.header-left-logo:hover {
+  cursor: pointer;
 }
 
 /*맨 위 헤더부분 여기까지 -------------------------------------------------*/
