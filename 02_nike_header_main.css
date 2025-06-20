@@ -151,6 +151,9 @@
   .serch {
     background: #e5e5e5;
   }
+  .header-serch-box-lens {
+    background: #f5f5f5;
+  }
   background: #e5e5e5;
 }
 
@@ -181,7 +184,7 @@
 
 .header-serch-box-lens:hover {
   cursor: pointer;
-  background: #cacacb;
+  background: #cacacb !important;
 }
 
 .header-bookmark {

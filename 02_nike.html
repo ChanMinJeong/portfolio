@@ -470,16 +470,17 @@
       <div class="main-page-opacity-control"></div>
       <div class="top-promotion">
         <span class="top-promotion-span">대학생 할인 프로그램 안내</span>
-        <span>자세히 보기</span>
+        <span class="top-promotion-span-link">자세히 보기</span>
       </div>
       <div class="main-page-first-video">
-        <video class="first-video" autoplay loop muted controls>
+        <video class="first-video" autoplay loop muted>
           <!--뮤트는 음소거-->
           <source
             src="./video/Nike-Just-Do-It-01.mp4"
             type="video/mp4"
             alt="나이키 공식 홈페이지 비디오"
           />
+          브라우저가 비디오를 지원하지 않습니다.
         </video>
       </div>
       <div class="main-page-national-team-uniform">
@@ -491,7 +492,9 @@
           >새롭게 출시된 2025 대한민국 국가대표팀 유니폼을 만나 보세요.</span
         >
         <div class="main-page-national-team-uniform-shop">
-          <div class="main-page-national-team-uniform-shop-btn">구매하기</div>
+          <botton class="main-page-national-team-uniform-shop-btn"
+            >구매하기</botton
+          >
         </div>
       </div>
 
@@ -520,182 +523,239 @@
         </div>
         <div class="main-page-iconic-shose-img-slider-box">
           <ul class="iconic-shose-slider-track">
+            <!--위치인덱스 음수로 갈 때 찐빠나는 곳 땜빵 이미지 3개-->
             <li class="iconic-shose-img">
-              <img
-                src="./images/nike-just-do-it-shose-1.jpg"
-                alt="나이키 아이코닉 슈즈"
-              />
-            </li>
-            <li class="iconic-shose-img">
-              <img
-                src="./images/nike-just-do-it-shose-2.jpg"
-                alt="나이키 아이코닉 슈즈"
-              />
-            </li>
-            <li class="iconic-shose-img">
-              <img
-                src="./images/nike-just-do-it-shose-3.jpg"
-                alt="나이키 아이코닉 슈즈"
-              />
-            </li>
-            <li class="iconic-shose-img">
-              <img
-                src="./images/nike-just-do-it-shose-4.jpg"
-                alt="나이키 아이코닉 슈즈"
-              />
-            </li>
-            <li class="iconic-shose-img">
-              <img
-                src="./images/nike-just-do-it-shose-5.jpg"
-                alt="나이키 아이코닉 슈즈"
-              />
-            </li>
-            <li class="iconic-shose-img">
-              <img
-                src="./images/nike-just-do-it-shose-6.jpg"
-                alt="나이키 아이코닉 슈즈"
-              />
-            </li>
-            <li class="iconic-shose-img">
-              <img
-                src="./images/nike-just-do-it-shose-7.jpg"
-                alt="나이키 아이코닉 슈즈"
-              />
-            </li>
-            <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">8/10</span>
               <img
                 src="./images/nike-just-do-it-shose-8.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">9/10</span>
               <img
                 src="./images/nike-just-do-it-shose-9.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">10/10</span>
               <img
                 src="./images/nike-just-do-it-shose-10.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
-            <!--똑같은 이미지 복사-->
+
+            <!--위치인덱스 음수값일 때 보여지는 복사본-->
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">1/10</span>
               <img
                 src="./images/nike-just-do-it-shose-1.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">2/10</span>
               <img
                 src="./images/nike-just-do-it-shose-2.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">3/10</span>
               <img
                 src="./images/nike-just-do-it-shose-3.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">4/10</span>
               <img
                 src="./images/nike-just-do-it-shose-4.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">5/10</span>
               <img
                 src="./images/nike-just-do-it-shose-5.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">6/10</span>
               <img
                 src="./images/nike-just-do-it-shose-6.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">7/10</span>
               <img
                 src="./images/nike-just-do-it-shose-7.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">8/10</span>
               <img
                 src="./images/nike-just-do-it-shose-8.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">9/10</span>
               <img
                 src="./images/nike-just-do-it-shose-9.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">10/10</span>
               <img
                 src="./images/nike-just-do-it-shose-10.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
+
+            <!--원본 이미지 10장-->
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">1/10</span>
               <img
                 src="./images/nike-just-do-it-shose-1.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">2/10</span>
               <img
                 src="./images/nike-just-do-it-shose-2.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">3/10</span>
               <img
                 src="./images/nike-just-do-it-shose-3.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">4/10</span>
               <img
                 src="./images/nike-just-do-it-shose-4.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">5/10</span>
               <img
                 src="./images/nike-just-do-it-shose-5.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">6/10</span>
               <img
                 src="./images/nike-just-do-it-shose-6.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">7/10</span>
               <img
                 src="./images/nike-just-do-it-shose-7.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">8/10</span>
               <img
                 src="./images/nike-just-do-it-shose-8.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">9/10</span>
               <img
                 src="./images/nike-just-do-it-shose-9.jpg"
                 alt="나이키 아이코닉 슈즈"
               />
             </li>
             <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">10/10</span>
+              <img
+                src="./images/nike-just-do-it-shose-10.jpg"
+                alt="나이키 아이코닉 슈즈"
+              />
+            </li>
+
+            <!--위치인덱스 양수값일 때 보여지는 복사본-->
+            <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">1/10</span>
+              <img
+                src="./images/nike-just-do-it-shose-1.jpg"
+                alt="나이키 아이코닉 슈즈"
+              />
+            </li>
+            <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">2/10</span>
+              <img
+                src="./images/nike-just-do-it-shose-2.jpg"
+                alt="나이키 아이코닉 슈즈"
+              />
+            </li>
+            <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">3/10</span>
+              <img
+                src="./images/nike-just-do-it-shose-3.jpg"
+                alt="나이키 아이코닉 슈즈"
+              />
+            </li>
+            <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">4/10</span>
+              <img
+                src="./images/nike-just-do-it-shose-4.jpg"
+                alt="나이키 아이코닉 슈즈"
+              />
+            </li>
+            <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">5/10</span>
+              <img
+                src="./images/nike-just-do-it-shose-5.jpg"
+                alt="나이키 아이코닉 슈즈"
+              />
+            </li>
+            <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">6/10</span>
+              <img
+                src="./images/nike-just-do-it-shose-6.jpg"
+                alt="나이키 아이코닉 슈즈"
+              />
+            </li>
+            <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">7/10</span>
+              <img
+                src="./images/nike-just-do-it-shose-7.jpg"
+                alt="나이키 아이코닉 슈즈"
+              />
+            </li>
+            <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">8/10</span>
+              <img
+                src="./images/nike-just-do-it-shose-8.jpg"
+                alt="나이키 아이코닉 슈즈"
+              />
+            </li>
+            <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">9/10</span>
+              <img
+                src="./images/nike-just-do-it-shose-9.jpg"
+                alt="나이키 아이코닉 슈즈"
+              />
+            </li>
+            <li class="iconic-shose-img">
+              <span class="iconic-shose-img-indicator">10/10</span>
               <img
                 src="./images/nike-just-do-it-shose-10.jpg"
                 alt="나이키 아이코닉 슈즈"
@@ -704,13 +764,55 @@
           </ul>
         </div>
 
-        <div class="main-page-iconic-shose-img-slider-left-btn"></div>
-        <div class="main-page-iconic-shose-img-slider-right-btn"></div>
+        <div class="main-page-iconic-shose-img-slider-left-btn-box">
+          <button class="main-page-iconic-shose-img-slider-left-btn">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              viewBox="0 0 24 24"
+              role="img"
+              width="24px"
+              height="24px"
+              fill="none"
+            >
+              <path
+                stroke="currentColor"
+                stroke-width="2.5"
+                d="M15.525 18.966L8.558 12l6.967-6.967"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div class="main-page-iconic-shose-img-slider-right-btn-box">
+          <button class="main-page-iconic-shose-img-slider-right-btn">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              viewBox="0 0 24 24"
+              role="img"
+              width="24px"
+              height="24px"
+              fill="none"
+            >
+              <path
+                stroke="currentColor"
+                stroke-width="2.5"
+                d="M8.474 18.966L15.44 12 8.474 5.033"
+              ></path>
+            </svg>
+          </button>
+        </div>
       </div>
 
       <!--월드컵 축구화 프로모션 부분-->
       <div class="main-page-second-video">
-        <video class="second-video" autoplay loop muted controls>
+        <div class="main-page-second-video-span">
+          <span class="phantom-span-one">골을 향한 굶주림</span>
+          <span class="phantom-span-two"
+            >무서울 만큼 정교한 새로운 팬텀 6를 만나보세요.</span
+          >
+        </div>
+        <video class="second-video" autoplay loop muted>
           <!--뮤트는 음소거-->
           <source
             src="./video/Nike-Just-Do-It-03.mp4"
@@ -720,7 +822,6 @@
         </video>
       </div>
       <div class="main-page-more-goal">
-        <span class="main-page-more-goal-span"></span>
         <h1>멈추지 마. 더 많은 골을 원해.</h1>
         <div class="main-page-more-goal-shop">
           <div class="main-page-more-goal-shop-btn">구매하기</div>
@@ -993,14 +1094,14 @@
     /*올웨이즈 아이코닉 신발 이미지 슬라이더 버튼 관련 변수*/
     const isImgslider = document.querySelector(".iconic-shose-slider-track");
     const isImgleftBtn = document.querySelector(
-      ".main-page-iconic-shose-img-slider-left-btn"
+      ".main-page-iconic-shose-img-slider-left-btn-box"
     );
     const isImgrightBtn = document.querySelector(
-      ".main-page-iconic-shose-img-slider-right-btn"
+      ".main-page-iconic-shose-img-slider-right-btn-box"
     );
 
-    const imageWidth = 225;
-    const imageCount = 10;
+    const imageWidth = 250;
+    const imageCount = 13;
     let currentIndex = imageCount; // 복제본 이후부터 시작
     let isSliding = false;
     isImgslider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
@@ -1071,6 +1172,34 @@
       isImgSliderBox.style.transform = `translateX(-${offset}px)`;
     }*/
 
+    /*인디케이터 현재 보여줄 인덱스값 및 오파시티 조절 함수*/
+    function isImgIndicator(index) {
+      const indicators = document.querySelectorAll(
+        ".iconic-shose-img-indicator"
+      );
+
+      // 모두 초기화
+      indicators.forEach((indicator) => {
+        indicator.classList.remove("active-indicator");
+      });
+
+      const visibleIndex = index % imageCount; // 0 ~ 9
+
+      // 현재 화면에 보이는 슬라이드 기준으로 인디케이터 리스트 중 실제로 보이는 span을 찾음
+      const iconicShoseImgs = document.querySelectorAll(".iconic-shose-img");
+      const visibleImgIndex = index;
+
+      if (visibleImgIndex >= 0 && visibleImgIndex < iconicShoseImgs.length) {
+        const visibleImg = iconicShoseImgs[visibleImgIndex];
+        const indicator = visibleImg.querySelector(
+          ".iconic-shose-img-indicator"
+        );
+        if (indicator) {
+          indicator.classList.add("active-indicator");
+        }
+      }
+    }
+
     //아이코닉슈즈 이미지 슬라이더 무한루프 함수
     //초기 위치값 설정 함수
     function slideTo(index) {
@@ -1079,23 +1208,25 @@
       isImgslider.style.transition = "transform 0.5s ease";
       isImgslider.style.transform = `translateX(-${index * imageWidth}px)`;
       currentIndex = index;
+      isImgIndicator(index);
     }
+
     //무한루프를 돌리는 함수
     isImgslider.addEventListener("transitionend", () => {
-      if (currentIndex >= imageCount * 2) {
+      if (currentIndex >= imageCount * 2 - 3) {
         isImgslider.style.transition = "none";
         currentIndex = imageCount;
         isImgslider.style.transform = `translateX(-${
           currentIndex * imageWidth
         }px)`;
-      } else if (currentIndex <= 0) {
+      } else if (currentIndex <= 3) {
         isImgslider.style.transition = "none";
         currentIndex = imageCount;
         isImgslider.style.transform = `translateX(-${
           currentIndex * imageWidth
         }px)`;
       }
-
+      isImgIndicator(currentIndex);
       isSliding = false; // 다시 클릭 허용
     });
 
@@ -1180,6 +1311,12 @@
       slideTo(currentIndex - 1);
     });
 
+    //아이코닉 슈즈 이미지 슬라이더 무한루프 인디케이터 초기표시
+    document.addEventListener("DOMContentLoaded", () => {
+      isImgIndicator(currentIndex); // 초기 표시
+    });
+
+    //푸터 메뉴 마우스 호버시 이벤트
     footerMenuBtn.addEventListener("mouseenter", () => {
       mouseHoverFooterMenu(dropdownFooter);
     });
