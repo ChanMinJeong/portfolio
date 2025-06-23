@@ -82,7 +82,7 @@ li {
 
 .first-video {
   width: 90%;
-  min-width: 800px;
+  min-width: 1300px;
 }
 
 .main-page-national-team-uniform {
@@ -140,8 +140,8 @@ li {
 
 .summer-ready-img {
   width: 90%;
-  min-width: 800px;
   height: auto;
+  min-width: 1300px;
 }
 
 .main-page-summer-ready-shose {
@@ -150,6 +150,7 @@ li {
   justify-content: center;
   align-items: center;
   width: auto;
+
   padding-top: var(--header-padding);
   padding-bottom: var(--header-padding);
 }
@@ -204,7 +205,7 @@ li {
 .main-page-always-iconic-shose {
   display: flex;
   width: 90%;
-  min-width: 800px;
+  min-width: 1000px;
 }
 
 .main-page-always-iconic-shose > span {
@@ -323,6 +324,7 @@ li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
   width: auto;
   height: auto;
   padding-top: var(--header-padding);
@@ -331,28 +333,33 @@ li {
 
 .second-video {
   width: 90%;
-  min-width: 800px;
+  height: auto;
+  min-width: 1300px;
+}
+
+.main-page-second-video-position {
+  position: absolute;
+  width: 90%;
+  height: 90%;
 }
 
 .main-page-second-video-span {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  width: 90%;
-  height: 500px;
-  color: red;
+  justify-content: end;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  color: white;
 }
 
 .phantom-span-one {
-  position: relative;
-  top: 60%;
   font-size: 60px;
   font-weight: bold;
 }
 
 .phantom-span-two {
-  position: relative;
-  top: 60%;
   font-size: 40px;
   font-weight: 500;
 }
@@ -415,6 +422,30 @@ li {
   align-items: center;
   width: 90%;
   height: auto;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.mambership > span {
+  font-size: 18px;
+  font-weight: 500;
+  padding-right: 50px;
+}
+
+.main-page-nike-mambership-btn,
+.main-page-nike-mambership-btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: #e5e5e5;
+}
+
+.main-page-nike-mambership-btn:hover,
+.main-page-nike-mambership-btn:hover {
+  background: #cacacb;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .main-page-nike-mambership-img-box {
@@ -422,6 +453,7 @@ li {
   height: auto;
   overflow-x: hidden;
   padding-bottom: 15px; /*스크롤만큼 패딩 줬다가 없애기*/
+  cursor: pointer;
 }
 
 .main-page-nike-mambership-img-box:hover {
@@ -441,7 +473,7 @@ li {
   display: flex;
   flex-direction: column;
   width: auto;
-  min-width: 600px;
+  min-width: 500px;
   height: auto; /*축 오버플로우 생기면 이놈 조절해야함*/
 }
 
@@ -456,19 +488,38 @@ li {
 .mambership-img-spanbtn {
   display: flex;
   flex-direction: column;
+  padding-top: 20px;
+}
+
+.mambership-img-spanbtn-span {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.mambership-img-spanbtn > h4 {
+  font-size: 22px;
+  font-weight: 500;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  margin: 0;
 }
 
 .mambership-span-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
-  width: 115px;
+  height: 42px;
+  width: 125px;
   background: black;
   border: none;
   border-radius: 50px;
   color: white;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.mambership-span-btn:hover {
+  opacity: 0.7;
 }
 
 /*푸터 메뉴 버튼 감싸는 요소 */
@@ -495,7 +546,14 @@ li {
   width: 100%;
   min-width: 100px;
   height: auto;
-  gap: 130px;
+  padding-bottom: 80px;
+  gap: 120px;
+}
+
+.footer-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 /*메뉴에 마우스 호버시 드롭다운 리스트*/
@@ -504,10 +562,35 @@ li {
   flex-direction: column;
   left: 0;
   width: 100%;
-  min-width: 110px;
+  min-width: 100px;
   height: 0;
+  gap: 15px;
   overflow: hidden;
-  background: lightgreen;
+  background: white;
+}
+
+.footer-menu-featured,
+.footer-menu-shose,
+.footer-menu-clothes,
+.footer-menu-kids {
+  font-size: 16px;
+  font-weight: 600;
+  color: #7c7c7e;
+}
+
+.footer-menu-featured:hover,
+.footer-menu-shose:hover,
+.footer-menu-clothes:hover,
+.footer-menu-kids:hover {
+  cursor: pointer;
+  color: black;
+  transition: 0.3s;
+}
+
+.footer-menu-list-span {
+  font-size: 20px;
+  font-weight: 500;
+  padding-bottom: 10px;
 }
 
 /*푸터 메인 내용*/
@@ -523,12 +606,15 @@ li {
 .footer-line {
   width: 90%;
   height: 1px;
-  background: black;
+  background: #7c7c7e;
+  opacity: 0.3;
 }
 
 .footer-main-content-box {
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   width: 90%;
   height: auto;
   gap: 105px;
@@ -537,17 +623,61 @@ li {
 .footer-main-content {
   display: flex;
   flex-direction: column;
+  min-width: 100px;
+  padding-top: 40px;
+  gap: 15px;
+}
+
+.footer-main-content > h3 {
+  font-size: 14px;
+}
+
+.footer-main-content > span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #7c7c7e;
+}
+
+.footer-main-content > span:hover {
+  cursor: pointer;
+}
+
+.footer-main-content-korea-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: start;
+  padding-top: 40px;
+  margin: 0;
 }
 
 .footer-main-content-korea {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: start;
+  justify-content: end;
+  align-items: center;
+  min-width: 100px;
+  gap: 5px;
+}
+
+.footer-main-content-korea:hover {
+  cursor: pointer;
+}
+
+.footer-main-content-korea > svg {
+  width: 15px;
+  color: #7c7c7e;
+}
+
+.footer-korea {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #7c7c7e;
 }
 
 .footer-content-airback {
-  padding-top: 30px;
+  padding-top: 50px;
 }
 
 .footer-serve-content {
@@ -569,6 +699,18 @@ li {
   gap: 25px;
   padding-left: 0;
   padding-bottom: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #7c7c7e;
+}
+
+.footer-serve-content-list li:nth-child(3) {
+  font-weight: 900;
+}
+
+.footer-serve-content-list li:not(:first-child):hover {
+  cursor: pointer;
+  color: black;
 }
 
 /*푸터 이용약관, 기업상세정보 표기*/
@@ -578,14 +720,8 @@ li {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 50px;
-}
-
-.footer-last-content-box {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
   height: auto;
+  padding-top: var(--header-padding);
 }
 
 .footer-last-content {
@@ -593,7 +729,7 @@ li {
   flex-direction: row;
   width: 90%;
   height: auto;
-  padding-top: var(--header-padding);
+  padding-top: 30px;
   padding-bottom: var(--header-padding);
   gap: 30px;
 }
@@ -602,10 +738,23 @@ li {
   width: 100%;
   min-width: 100px;
   font-size: 14px;
+  font-weight: 500;
+  color: #7c7c7e;
+}
+
+.u-tag-left:hover {
+  cursor: pointer;
+  color: black;
 }
 
 .footer-last-contet-right {
   width: 100%;
   min-width: 100px;
   font-size: 14px;
+  font-weight: 500;
+  color: #7c7c7e;
+}
+
+.u-tag-right:hover {
+  cursor: pointer;
 }
