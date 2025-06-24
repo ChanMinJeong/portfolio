@@ -26,7 +26,6 @@ li {
 /*웹 페이지 헤더 고정시키기, 스크롤 다운 이벤트 발생시 사라지게 만들기*/
 
 /*헤더 아래쪽 화면은 여기서부터 ---------------------------------*/
-
 .main-page-background {
   position: relative;
   width: 100dvw;
@@ -150,7 +149,6 @@ li {
   justify-content: center;
   align-items: center;
   width: auto;
-
   padding-top: var(--header-padding);
   padding-bottom: var(--header-padding);
 }
@@ -189,7 +187,7 @@ li {
   cursor: pointer;
 }
 
-/*신발 이미지 담는 div */
+/*아이코닉 신발 이미지 담는 div, 슬라이더*/
 .main-page-always-iconic-shose-box {
   display: flex;
   position: relative;
@@ -432,8 +430,8 @@ li {
   padding-right: 50px;
 }
 
-.main-page-nike-mambership-btn,
-.main-page-nike-mambership-btn {
+.main-page-nike-mambership-left-btn,
+.main-page-nike-mambership-right-btn {
   width: 50px;
   height: 50px;
   border: none;
@@ -441,8 +439,8 @@ li {
   background: #e5e5e5;
 }
 
-.main-page-nike-mambership-btn:hover,
-.main-page-nike-mambership-btn:hover {
+.main-page-nike-mambership-left-btn:hover,
+.main-page-nike-mambership-right-btn:hover {
   background: #cacacb;
   cursor: pointer;
   transition: 0.3s;
@@ -484,7 +482,6 @@ li {
 }
 
 /*이미지 아래 컨텐츠 부분*/
-
 .mambership-img-spanbtn {
   display: flex;
   flex-direction: column;
@@ -522,6 +519,7 @@ li {
   opacity: 0.7;
 }
 
+/*여기서부터 푸터 부분*/
 /*푸터 메뉴 버튼 감싸는 요소 */
 .footer-menu-box {
   display: flex;

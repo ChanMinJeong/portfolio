@@ -835,7 +835,7 @@
           <span>나이키 맴버쉽</span>
           <div class="mambership">
             <span>맴버 가입하기</span>
-            <button class="main-page-nike-mambership-btn">
+            <button class="main-page-nike-mambership-left-btn">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -852,7 +852,7 @@
                 ></path>
               </svg>
             </button>
-            <button class="main-page-nike-mambership-btn">
+            <button class="main-page-nike-mambership-right-btn">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -1152,6 +1152,20 @@
     let isSliding = false;
     isImgslider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
 
+    //나이키 맴버쉽 이미지 슬라이더 버튼 변수
+    const mambershipSliderBox = document.querySelector(
+      ".main-page-nike-mambership-img-box"
+    );
+    const mambershipSliderTrack = document.querySelector(
+      ".main-page-nike-mambership-slider-track"
+    );
+    const mambershipLeftBtn = document.querySelector(
+      ".main-page-nike-mambership-left-btn"
+    );
+    const mambershipRightBtn = document.querySelector(
+      ".main-page-nike-mambership-right-btn"
+    );
+
     //푸터 메뉴 드롭다운 관련 변수
     const footerMenuBtn = document.querySelector(".footer-menu");
     const dropdownFooter = document.querySelectorAll(
@@ -1256,7 +1270,6 @@
       currentIndex = index;
       isImgIndicator(index);
     }
-
     //무한루프를 돌리는 함수
     isImgslider.addEventListener("transitionend", () => {
       if (currentIndex >= imageCount * 2 - 3) {
@@ -1289,6 +1302,16 @@
         element.style.transition = "height 0.5s";
         element.style.height = "0px";
       });
+    }
+
+    //나이키 맴버쉽 이미지 슬라이더 버튼 함수
+    function mambershipSlider() {
+      const scrollLeft = mambershipSliderBox.scrollLeft;
+      const maxScrollLeft =
+        mambershipSliderTrack.scrollWidth - sliderBox.clientWidth;
+
+      mambershipLeftBtn.disabled = scrollLeft <= 0;
+      mambershipRightBtn.disabled = scrollLeft >= maxScrollLeft;
     }
 
     /*고객센터 버튼 마우스 이벤트*/
@@ -1369,5 +1392,23 @@
     footerMenuBtn.addEventListener("mouseleave", () => {
       mouseOutFooterMenu(dropdownFooter);
     });
+
+    //나이키 맴버쉽 이미지 슬라이더 버튼 이벤트
+    mambershipLeftBtn.addEventListener("click", () => {
+      mambershipSliderBox.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+    });
+    mambershipRightBtn.addEventListener("click", () => {
+      const maxScrollLeft =
+        mambershipSliderTrack.scrollWidth - mambershipSliderBox.clientWidth;
+      mambershipSliderBox.scrollTo({
+        left: maxScrollLeft,
+        behavior: "smooth",
+      });
+    });
+    mambershipSliderBox.addEventListener("scroll", mambershipSlider);
+    window.addEventListener("load", mambershipSlider);
   </script>
 </html>
